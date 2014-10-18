@@ -1,0 +1,40 @@
+{
+  "name": "grunt-xml-sitemap",
+  "version": "0.1.0",
+  "description": "Grunt plugin for generating XML sitemaps for search engine indexing.",
+  "homepage": "https://github.com/furzeface/grunt-xml-sitemap",
+  "repository": "https://github.com/furzeface/grunt-xml-sitemap",
+  "author": {
+    "name": "Daniel Furze",
+    "email": "daniel@furzeface.com",
+    "url": "http://daniel.furzeface.com"
+  },
+  "keywords": [
+    "gruntplugin",
+    "sitemap",
+    "seo",
+    "xml"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "superb": "^1.0.2",
+    "xmlbuilder": "^2.4.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.0",
+    "jshint-stylish": "~0.1.5",
+    "load-grunt-tasks": "~0.3.0",
+    "time-grunt": "^1.0.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
