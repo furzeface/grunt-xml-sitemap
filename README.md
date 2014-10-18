@@ -1,7 +1,4 @@
 # grunt-xml-sitemap
-[![Build Status][travis-image]][travis-url]
-[![devDependency Status][dev-dependency-image]][dev-dependency-url]
-[![Stories in Ready][waffle-image]][waffle-url]
 
 > Grunt plugin for generating XML sitemaps for search engine indexing.
 
@@ -85,11 +82,25 @@ grunt.initConfig({
 })
 ```
 
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+## Contributing 
+[![Build Status][travis-image]][travis-url]
+[![devDependency Status][dev-dependency-image]][dev-dependency-url]
+[![Stories in Ready][waffle-image]][waffle-url]
+
+To contribute either check the [Waffle board](https://waffle.io/furzeface/grunt-xml-sitemap) or [GitHub issues](https://github.com/furzeface/grunt-xml-sitemap/issues) then work away!
+
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com).
+
+```
+$ grunt test
+```
+
+* Install [editorconfig-sublime](https://github.com/sindresorhus/editorconfig-sublime) for Sublime Text to help with consistent code formatting.
+* Commit messages loosely adhere to [these guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit).
+* Versioning adheres to [Semver](http://semver.org).
 
 ## Release History
-_(Nothing yet)_
+- 2014-10-18 v0.1.0 - Initial release. 
 
 ## License
 Copyright (c) 2014 Daniel Furze. 
