@@ -3,25 +3,37 @@
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
       <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/123.html</loc>
-      <lastmod>2014-10-18T09:54:31.000Z</lastmod>
+      <lastmod>2014-10-20T19:34:42.000Z</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     <url>
       <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/abc.html</loc>
-      <lastmod>2014-10-18T09:54:31.000Z</lastmod>
+      <lastmod>2014-10-20T19:34:42.000Z</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/about/</loc>
+      <lastmod>2014-10-20T19:34:42.000Z</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+    <url>
+      <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/blog/</loc>
+      <lastmod>2014-10-20T19:34:42.000Z</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     <url>
       <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/exclude/456.html</loc>
-      <lastmod>2014-10-18T09:54:31.000Z</lastmod>
+      <lastmod>2014-10-20T19:34:42.000Z</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
     <url>
       <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/exclude/def.html</loc>
-      <lastmod>2014-10-18T09:54:31.000Z</lastmod>
+      <lastmod>2014-10-20T19:34:42.000Z</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
