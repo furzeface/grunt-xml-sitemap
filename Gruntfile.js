@@ -142,20 +142,28 @@
         ]
       }
     }
-
   });
+
 
   // Load this plugin's task
   grunt.loadTasks('tasks');
 
-  // Whenever the 'test' task is run, first clean the 'tmp' dir, then run this plugin's task, then test the result
+
+  // Test task alias
   grunt.registerTask('test', [
     'clean',
     'xml_sitemap',
     'nodeunit'
     ]);
 
-  // By default, lint and run all tests
+  // Task for local development
+  grunt.registerTask('develop', [
+    'default',
+    'test',
+    'watch'
+    ]);
+
+  // By default hint and run all tests
   grunt.registerTask('default', [
     'jshint',
     'test'
