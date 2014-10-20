@@ -143,11 +143,13 @@ grunt.initConfig({
 
 To contribute either check the [Waffle board](https://waffle.io/furzeface/grunt-xml-sitemap) or [GitHub issues](https://github.com/furzeface/grunt-xml-sitemap/issues) then work away:
 
-* [Fork it](https://github.com/furzeface/grunt-xml-sitemap/fork)!
-* Create your feature branch: `git checkout -b feature/awesome-feature`
-* Commit your changes: `git commit -m 'feat(Project): Adds awesome feature'`
-* Push to the branch: `git push origin feature/awesome-feature`
-* Submit a [pull request](https://github.com/furzeface/grunt-xml-sitemap/pulls) :+1:
+1. [Fork it](https://github.com/furzeface/grunt-xml-sitemap/fork)!
+2. Create your feature branch: `git checkout -b feature/awesome-feature`
+3. Run: `npm install` for dependencies and `npm link` for local development 
+4. Run: `grunt develop` to build and watch for changes
+5. Commit your changes: `git commit -m 'feat(Project): Adds awesome feature'`
+6. Push to the branch: `git push origin feature/awesome-feature`
+7. Submit a [pull request](https://github.com/furzeface/grunt-xml-sitemap/pulls) :+1:
 
 Tips:
 * In lieu of a formal styleguide, take care to maintain the existing coding style. 
