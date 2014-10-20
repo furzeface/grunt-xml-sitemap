@@ -30,6 +30,8 @@
     "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-notify": "^0.3.1",
     "jshint-stylish": "~1.0.0",
     "load-grunt-tasks": "~0.6.0",
     "time-grunt": "^1.0.0"

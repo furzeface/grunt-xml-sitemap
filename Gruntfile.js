@@ -18,42 +18,75 @@
     ]
   });
 
-  // Time all the things
+  // Time all of the things
   require('time-grunt')(grunt);
 
   // Project configuration
   grunt.initConfig({
     // Config
-    pkg: grunt.file.readJSON('package.json'),
-    meta: {
-      banner: '/* <%= pkg.name %> :: Latest build: <%= grunt.template.today(\'dd/mm/yyyy, h:MM:ss TT\') %> */\n'
-    },
     config: {
       gruntfile: 'Gruntfile.js',
-      tmp: 'tmp',
-      test: 'test',
-      tasks: 'tasks'
+      tasks: 'tasks',
+      tests: 'test',
+      tmp: 'tmp'
     },
+
+    // Watchers for development
+    watch: {
+      gruntfile: {
+        files: '<%= config.gruntfile %>',
+        tasks: [
+        'jshint:gruntfile'
+        ]
+      },
+      tasks: {
+        files: '<%= config.tasks %>/**/*.js',
+        tasks: [
+        'jshint:tasks',
+        'test'
+        ]
+      },
+      test: {
+        files: '<%= config.tests %>/**/*_test.js',
+        tasks: [
+        'jshint:tests',
+        'nodeunit'
+        ]
+      }
+    },
+
 
     // Housekeeping tasks
     clean: {
       tests: [
-      'tmp'
+      '<%= config.tmp %>'
       ]
     },
 
 
     // Script tasks
     jshint: {
-      all: [
-      '<%= config.gruntfile %>',
-      '<%= config.tasks %>/*.js',
-      '<%= nodeunit.tests %>'
-      ],
       options: {
         jshintrc: '.jshintrc',
         reporter: require('jshint-stylish')
-      }
+      },
+      gruntfile: [
+      '<%= config.gruntfile %>',
+      ],
+      tasks: [
+      '<%= config.tasks %>/*.js',
+      ],
+      tests: [
+      '<%= nodeunit.tests %>'
+      ]
+    },
+
+
+    // Tests
+    nodeunit: {
+      tests: [
+      '<%= config.tests %>/*_test.js'
+      ]
     },
 
 
@@ -65,7 +98,7 @@
         files: [
         {
           expand: true,
-          cwd: '<%= config.test %>/fixtures',
+          cwd: '<%= config.tests %>/fixtures',
           src: [
           '**/*.html'
           ]
@@ -81,7 +114,7 @@
         files: [
         {
           expand: true,
-          cwd: '<%= config.test %>/fixtures',
+          cwd: '<%= config.tests %>/fixtures',
           src: [
           '**/*.html'
           ]
@@ -100,7 +133,7 @@
         files: [
         {
           expand: true,
-          cwd: '<%= config.test %>/fixtures',
+          cwd: '<%= config.tests %>/fixtures',
           src: [
           '**/*.html',
           '!exclude/**/*.html'
@@ -108,15 +141,8 @@
         }
         ]
       }
-    },
-
-
-    // Test tasks
-    nodeunit: {
-      tests: [
-      '<%= config.test %>/*_test.js'
-      ]
     }
+
   });
 
   // Load this plugin's task
