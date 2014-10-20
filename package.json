@@ -1,6 +1,6 @@
 {
   "name": "grunt-xml-sitemap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Grunt plugin for generating XML sitemaps for search engine indexing.",
   "homepage": "https://github.com/furzeface/grunt-xml-sitemap",
   "repository": "https://github.com/furzeface/grunt-xml-sitemap",
