@@ -75,7 +75,8 @@
       default_options_lastmod: {
         options: {
           fileName: 'sitemap-lastmod',
-          lastMod: '2014-10-18T09:54:31.000Z'
+          lastMod: '2014-10-18T09:54:31.000Z',
+          stripIndex: false
         },
         files: [
         {
@@ -103,8 +104,7 @@
           src: [
           '**/*.html',
           '!exclude/**/*.html'
-          ],
-          dest: '<%= config.test %>/actual'
+          ]
         }
         ]
       }

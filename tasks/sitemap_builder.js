@@ -28,6 +28,7 @@
       dest: 'tmp/',
       fileName: 'sitemap',
       siteRoot: pkg.homepage,
+      stripIndex: true,
       lastMod: grunt.template.today('yyyy-mm-dd\'T\'HH:MM:ss.000\'Z\''),
       priority: '0.5'
     });
@@ -52,6 +53,10 @@
     this.filesSrc.forEach(function(file) {
       // Create XML node for each entry
       var url = urlset.ele('url');
+
+      if (options.stripIndex) {
+        file = file.replace('index.html', '');
+      }
 
       url.ele('loc').txt(siteRoot + file);
       url.ele('lastmod').txt(options.lastMod);
