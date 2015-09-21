@@ -36,12 +36,8 @@ module.exports = function (grunt) {
     if (!options.siteRoot) {
       grunt.fail.warn('Please set siteRoot variable in options.');
     } else {
-      var siteRoot = (options.siteRoot.slice(-1) === '/') ? options.siteRoot: options.siteRoot + '/';
+      var siteRoot = (options.siteRoot.slice(-1) === '/') ? options.siteRoot : options.siteRoot + '/';
     };
-
-    // We should be aware of fact that multiple files objects might have different `cwd`
-    // and this is not correct way to deal with it
-    var cwd = this.files[0].orig.cwd || '';
 
     // Build XML string
     var urlset = builder.create('urlset', {
@@ -50,22 +46,24 @@ module.exports = function (grunt) {
     });
 
     urlset.att('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
-    .att('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
-    .att('xsi:schemaLocation', 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd');
+      .att('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
+      .att('xsi:schemaLocation', 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd');
 
-    this.filesSrc.forEach(function(file) {
+    var dest, url;
+
+    this.files.forEach(function(file) {
+
+      // Get destination without cwd
+      dest = file.dest;
+
       // Create XML node for each entry
-      var url = urlset.ele('url');
+      url = urlset.ele('url');
 
       if (options.stripIndex) {
-        file = file.replace('index.html', '');
+        dest = dest.replace('index.html', '');
       }
 
-      if (cwd) {
-        file = file.replace(cwd + '/', '');
-      }
-
-      url.ele('loc').txt(siteRoot + file);
+      url.ele('loc').txt(siteRoot + dest);
       url.ele('lastmod').txt(options.lastMod);
       url.ele('changefreq').txt(options.changefreq);
       url.ele('priority').txt(options.priority);
@@ -79,7 +77,7 @@ module.exports = function (grunt) {
     });
 
     // Resolve options.dest, add '/' if needed
-    var fileDest = (options.dest.slice(-1) === '/') ? options.dest: options.dest + '/',
+    var fileDest = (options.dest.slice(-1) === '/') ? options.dest : options.dest + '/',
     fileName = options.fileName + '.xml';
 
     // Write XML to file
