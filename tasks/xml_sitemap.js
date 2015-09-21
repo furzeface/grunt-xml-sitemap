@@ -6,15 +6,14 @@
  * Licensed under the MIT license.
  */
 
- 'use strict';
+'use strict';
 
- module.exports = function (grunt) {
+module.exports = function (grunt) {
 
   // Require dependencies
-  var builder = require('xmlbuilder'),
-  fs = require('fs'),
-  superb = require('superb'),
-  chalk = require('chalk');
+  var builder = require('xmlbuilder');
+  var superb = require('superb');
+  var chalk = require('chalk');
 
   // Read in package.json
   var pkg = grunt.file.readJSON('./package.json');
@@ -35,12 +34,6 @@
 
     // Resolve options.siteRoot, add '/' if needed
     var siteRoot = (options.siteRoot.slice(-1) === '/') ? options.siteRoot: options.siteRoot + '/';
-
-    var root = require('xmlbuilder').create('root',
-      {version: '1.0', encoding: 'UTF-8', standalone: true},
-      {pubID: null, sysID: null},
-      {allowSurrogateChars: false, skipNullAttributes: false,
-        headless: false, ignoreDecorators: false, stringify: {}});
 
     // Build XML string
     var urlset = builder.create('urlset', {
