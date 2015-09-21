@@ -33,7 +33,11 @@ module.exports = function (grunt) {
     });
 
     // Resolve options.siteRoot, add '/' if needed
-    var siteRoot = (options.siteRoot.slice(-1) === '/') ? options.siteRoot: options.siteRoot + '/';
+    if (!options.siteRoot) {
+      grunt.fail.warn('Please set siteRoot variable in options.');
+    } else {
+      var siteRoot = (options.siteRoot.slice(-1) === '/') ? options.siteRoot: options.siteRoot + '/';
+    };
 
     // Build XML string
     var urlset = builder.create('urlset', {
