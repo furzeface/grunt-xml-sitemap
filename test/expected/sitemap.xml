@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/123.html</loc>
+    <loc>https://github.com/furzeface/grunt-xml-sitemap/fixtures/123.html</loc>
     <lastmod>2014-10-20T20:21:58.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/abc.html</loc>
+    <loc>https://github.com/furzeface/grunt-xml-sitemap/fixtures/abc.html</loc>
     <lastmod>2014-10-20T20:21:58.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/about/</loc>
+    <loc>https://github.com/furzeface/grunt-xml-sitemap/fixtures/about/</loc>
     <lastmod>2014-10-20T20:21:58.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/blog/</loc>
+    <loc>https://github.com/furzeface/grunt-xml-sitemap/fixtures/blog/</loc>
     <lastmod>2014-10-20T20:21:58.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/exclude/456.html</loc>
+    <loc>https://github.com/furzeface/grunt-xml-sitemap/fixtures/exclude/456.html</loc>
     <lastmod>2014-10-20T20:21:58.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://github.com/furzeface/grunt-xml-sitemap/test/fixtures/exclude/def.html</loc>
+    <loc>https://github.com/furzeface/grunt-xml-sitemap/fixtures/exclude/def.html</loc>
     <lastmod>2014-10-20T20:21:58.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

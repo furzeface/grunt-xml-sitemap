@@ -39,6 +39,10 @@ module.exports = function (grunt) {
       var siteRoot = (options.siteRoot.slice(-1) === '/') ? options.siteRoot: options.siteRoot + '/';
     };
 
+    // We should be aware of fact that multiple files objects might have different `cwd`
+    // and this is not correct way to deal with it
+    var cwd = this.files[0].orig.cwd || '';
+
     // Build XML string
     var urlset = builder.create('urlset', {
       version: '1.0',
@@ -55,6 +59,10 @@ module.exports = function (grunt) {
 
       if (options.stripIndex) {
         file = file.replace('index.html', '');
+      }
+
+      if (cwd) {
+        file = file.replace(cwd, '');
       }
 
       url.ele('loc').txt(siteRoot + file);
