@@ -62,7 +62,7 @@ module.exports = function (grunt) {
       }
 
       if (cwd) {
-        file = file.replace(cwd, '');
+        file = file.replace(cwd + '/', '');
       }
 
       url.ele('loc').txt(siteRoot + file);
