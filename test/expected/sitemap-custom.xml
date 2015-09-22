@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>http://daniel.furzeface.com/test/fixtures/123.html</loc>
+    <loc>http://daniel.furzeface.com/123.html</loc>
     <lastmod>2014-10-18T09:54:31.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://daniel.furzeface.com/test/fixtures/abc.html</loc>
+    <loc>http://daniel.furzeface.com/abc.html</loc>
     <lastmod>2014-10-18T09:54:31.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://daniel.furzeface.com/test/fixtures/about/</loc>
+    <loc>http://daniel.furzeface.com/about/</loc>
     <lastmod>2014-10-18T09:54:31.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://daniel.furzeface.com/test/fixtures/blog/</loc>
+    <loc>http://daniel.furzeface.com/blog/</loc>
     <lastmod>2014-10-18T09:54:31.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

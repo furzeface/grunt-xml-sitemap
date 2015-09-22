@@ -6,15 +6,14 @@
  * Licensed under the MIT license.
  */
 
- 'use strict';
+'use strict';
 
- module.exports = function (grunt) {
+module.exports = function (grunt) {
 
   // Require dependencies
-  var builder = require('xmlbuilder'),
-  fs = require('fs'),
-  superb = require('superb'),
-  chalk = require('chalk');
+  var builder = require('xmlbuilder');
+  var superb = require('superb');
+  var chalk = require('chalk');
 
   // Read in package.json
   var pkg = grunt.file.readJSON('./package.json');
@@ -34,13 +33,11 @@
     });
 
     // Resolve options.siteRoot, add '/' if needed
-    var siteRoot = (options.siteRoot.slice(-1) === '/') ? options.siteRoot: options.siteRoot + '/';
-
-    var root = require('xmlbuilder').create('root',
-      {version: '1.0', encoding: 'UTF-8', standalone: true},
-      {pubID: null, sysID: null},
-      {allowSurrogateChars: false, skipNullAttributes: false,
-        headless: false, ignoreDecorators: false, stringify: {}});
+    if (!options.siteRoot) {
+      grunt.fail.warn('Please set siteRoot variable in options.');
+    } else {
+      var siteRoot = (options.siteRoot.slice(-1) === '/') ? options.siteRoot : options.siteRoot + '/';
+    };
 
     // Build XML string
     var urlset = builder.create('urlset', {
@@ -49,18 +46,24 @@
     });
 
     urlset.att('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9')
-    .att('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
-    .att('xsi:schemaLocation', 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd');
+      .att('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
+      .att('xsi:schemaLocation', 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd');
 
-    this.filesSrc.forEach(function(file) {
+    var dest, url;
+
+    this.files.forEach(function(file) {
+
+      // Get destination without cwd
+      dest = file.dest;
+
       // Create XML node for each entry
-      var url = urlset.ele('url');
+      url = urlset.ele('url');
 
       if (options.stripIndex) {
-        file = file.replace('index.html', '');
+        dest = dest.replace('index.html', '');
       }
 
-      url.ele('loc').txt(siteRoot + file);
+      url.ele('loc').txt(siteRoot + dest);
       url.ele('lastmod').txt(options.lastMod);
       url.ele('changefreq').txt(options.changefreq);
       url.ele('priority').txt(options.priority);
@@ -74,7 +77,7 @@
     });
 
     // Resolve options.dest, add '/' if needed
-    var fileDest = (options.dest.slice(-1) === '/') ? options.dest: options.dest + '/',
+    var fileDest = (options.dest.slice(-1) === '/') ? options.dest : options.dest + '/',
     fileName = options.fileName + '.xml';
 
     // Write XML to file
